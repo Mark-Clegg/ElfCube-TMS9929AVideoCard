@@ -1,0 +1,111 @@
+
+(rules PCB TMS9929A Video Card
+  (snap_angle 
+    fortyfive_degree
+  )
+  (autoroute_settings
+    (fanout off)
+    (eu.mihosoft.freerouting.autoroute on)
+    (postroute on)
+    (vias on)
+    (via_costs 50)
+    (plane_via_costs 5)
+    (start_ripup_costs 100)
+    (start_pass_no 56)
+    (layer_rule F.Cu
+      (active on)
+      (preferred_direction horizontal)
+      (preferred_direction_trace_costs 1.0)
+      (against_preferred_direction_trace_costs 2.0)
+    )
+    (layer_rule B.Cu
+      (active on)
+      (preferred_direction vertical)
+      (preferred_direction_trace_costs 1.0)
+      (against_preferred_direction_trace_costs 2.0)
+    )
+  )
+  (rule
+    (width 250.0)
+    (clear 200.2)
+    (clear 125.0 (type smd_to_turn_gap))
+    (clear 300.2 (type default_Power))
+    (clear 50.0 (type smd_smd))
+    (clear 300.2 (type smd_Power))
+    (clear 300.2 (type "kicad_default"_Power))
+    (clear 300.2 (type Power_Power))
+  )
+  (padstack "Via[0-1]_800:400_um"
+    (shape
+      (circle F.Cu 800.0 0.0 0.0)
+    )
+    (shape
+      (circle B.Cu 800.0 0.0 0.0)
+    )
+    (attach off)
+  )
+  (via 
+    "Via[0-1]_800:400_um" "Via[0-1]_800:400_um" default
+  )
+  (via 
+    "Via[0-1]_800:400_um-kicad_default" "Via[0-1]_800:400_um" "kicad_default"
+  )
+  (via 
+    "Via[0-1]_800:400_um-Power" "Via[0-1]_800:400_um" Power
+  )
+  (via_rule
+    default "Via[0-1]_800:400_um"
+  )
+  (via_rule
+    "kicad_default" "Via[0-1]_800:400_um-kicad_default"
+  )
+  (via_rule
+    Power "Via[0-1]_800:400_um-Power"
+  )
+  (class default
+    (clearance_class default)
+    (via_rule default)
+    (rule
+      (width 250.0)
+    )
+    (circuit 
+      (use_layer F.Cu B.Cu)
+    )
+  )
+  (class "kicad_default"
+    ~IOR ~IOW D0 D1 D2 D3 D4 D5
+    D6 D7 Q ~CLEAR ~N4 /RD0 /AD0 /RD4
+    /AD4 /RD1 /AD1 /RD5 /AD5 /RD2 /AD2 /RD6
+    /AD6 /RD3 /AD3 /AD7 /RD7 "Net-(R1-Pad2)" "R-Y" Y
+    "B-Y" "Net-(C1-Pad1)" "Net-(C2-Pad1)" "Net-(U1-Pad6)" "Net-(U1-Pad11)" "Net-(U1-Pad3)" "Net-(U1-Pad8)" /A13
+    "Net-(U3-Pad37)" "Net-(U3-Pad16)" /A6 /A2 /A5 /A1 /A4 /A0
+    /A3 /A8 /A9 /A11 /A10 /A7 /A12 "Net-(J1-Pad38)"
+    "Net-(J1-Pad37)" "Net-(J1-Pad36)" "Net-(J1-Pad35)" "Net-(J1-Pad34)" "Net-(J1-Pad33)" "Net-(J1-Pad32)" "Net-(J1-Pad31)" "Net-(J1-Pad29)"
+    "Net-(J1-Pad28)" "Net-(J1-Pad27)" "Net-(J1-Pad16)" "Net-(J1-Pad15)" "Net-(J1-Pad14)" "Net-(J1-Pad13)" "Net-(J1-Pad12)" "Net-(J1-Pad11)"
+    "Net-(J1-Pad10)" "Net-(J1-Pad9)" "Net-(J1-Pad8)" "Net-(J1-Pad6)" "Net-(J1-Pad4)" "Net-(J1-Pad3)" R~W COL
+    ~R~W "Net-(U2-Pad4)" ~RAS ROW "Net-(U2-Pad2)" ~CAS "Net-(U9-Pad7)" "Net-(U9-Pad3)"
+    "Net-(R6-Pad2)" "Net-(U8-Pad13)" "Net-(U8-Pad6)" "Net-(U10-Pad8)" "Net-(U10-Pad5)" "Net-(U10-Pad1)" "Net-(C19-Pad1)" "Net-(R7-Pad2)"
+    "Net-(C12-Pad1)" "Net-(U4-Pad2)" "Net-(U5-Pad2)" "Net-(U2-Pad8)" "Net-(H1-Pad1)" "Net-(C18-Pad1)" "Net-(C19-Pad2)" "Net-(C13-Pad1)"
+    "Net-(C16-Pad1)" "Net-(C17-Pad2)" "Net-(C17-Pad1)" "Net-(C18-Pad2)" "Net-(Q1-Pad2)" "Net-(Q2-Pad2)" "Net-(Q3-Pad2)" "Net-(R11-Pad2)"
+    "Net-(R13-Pad2)"
+    (clearance_class "kicad_default")
+    (via_rule kicad_default)
+    (rule
+      (width 250.0)
+    )
+    (circuit 
+      (use_layer F.Cu B.Cu)
+    )
+  )
+  (class Power
+    VCC GND "/Video Signal Processing/VREF"
+    (clearance_class Power)
+    (via_rule Power)
+    (rule
+      (width 500.0)
+    )
+    (circuit 
+      (use_layer F.Cu B.Cu)
+    )
+  )
+)

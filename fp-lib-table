@@ -1,0 +1,3 @@
+(fp_lib_table
+  (lib (name "TMS9929A Video Card")(type KiCad)(uri "${KIPRJMOD}/TMS9929A Video Card.pretty")(options "")(descr ""))
+)

@@ -1,0 +1,32 @@
+EESchema-DOCLIB  Version 2.0
+#
+$CMP Conn_Coaxial_x3_Isolated
+D coaxial connector (BNC, SMA, SMB, SMC, Cinch/RCA, ...)
+K BNC SMA SMB SMC coaxial connector CINCH RCA
+F  ~
+$ENDCMP
+#
+$CMP HM6264LP-15
+D 65536 bit Static RAM 8Kx8
+$ENDCMP
+#
+$CMP LM833N
+D Dual operational amplifier
+K dual opamp
+F ~
+$ENDCMP
+#
+$CMP MB8118-10
+D NMOS 16,384-Bit Dynamic Random Access Memory
+$ENDCMP
+#
+$CMP TMS9929A
+D Video Display Processor
+$ENDCMP
+#
+$CMP ZTX653
+D NPN transistor,ZTX653 2A Ic 2Vce
+F https://www.diodes.com/assets/Datasheets/ZTX652.pdf
+$ENDCMP
+#
+#End Doc Library
